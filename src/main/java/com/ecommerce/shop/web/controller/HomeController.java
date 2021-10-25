@@ -16,7 +16,7 @@ import java.util.List;
     @Autowired
         ProductService productServiceImpl;
 
-        @GetMapping("/index")
+        @GetMapping(value = {"/","/index"})
         public String getIndex(Model model){
             List<Product> productList = productServiceImpl.findAll();
             model.addAttribute("products", productList);
